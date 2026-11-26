@@ -26,7 +26,14 @@ g++ -O3 test.cpp -o test_O3 && ./test_O3
 
 ## Expected result
 - The printed sum is always `31228640000` (all builds, sorted and unsorted).
-- Absolute times depend on the machine. In the paper (single run per configuration): -O0 unsorted 1195 ms, -O0 sorted 416 ms, -O3 unsorted 77 ms, -O3 sorted 76 ms.
+- Absolute times depend on the machine. Results of the run in the paper (10 runs per build, AMD Ryzen 7 7435HS, Kali Linux VM, g++ 16.2.0), median [min-max] in ms:
+
+| Build | Unsorted | Sorted |
+|---|---|---|
+| -O0 | 1370.5 [1251-2457] | 430 [406-825] |
+| -O3 | 66.5 [59-95] | 64 [59-81] |
+
+The raw output of that run is in `results/raw_output.txt`.
 
 ## Files
 | File | Purpose |
